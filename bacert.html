@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+	<title>東海企管輔導學生取得證照統計</title>
+	<meta name="keywords" content="東海,企管,學習成效,認證,證照,企業系統,ERP,規劃師,應用師,BI,數位行銷,雲端科技,Google數位學程,Google Ads,GA,AWS,東海企管資源,師資,企管學甚麼">
+	<meta name="description" content="此網頁呈現東海大學企業管理學系歷屆學生取得專業認證之統計資料，證照類別包含企業系統類(如 ERP規劃師、ERP應用師配銷模組、ERP應用師財務模組、BI應用師)及數位行銷與雲端科技類(如 Google數位學程、Google Ads、Google Analytics、AWS雲端服務認證)">
+<!-- Bootstrp 4 -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- liquid Fill Gauge -->
+    <script src="https://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+    <script src="js/liquidFillGauge.js" language="JavaScript"></script>
+        
+    
+
+<!-- TABLE CSS -->
+<style>
+.liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+.auto-style1 { text-align: center; 	font-size: xx-large; }
+.auto-style2 { text-align: center;  font-size: large; }
+
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 1px;
+  text-align: right;
+}
+
+#customers tr:nth-child(even) {background-color: #f2f2ff;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4C50AF;
+  color: white;
+}
+
+#customers_detail {
+  font-family: "Noto Sans TC", "Trebuchet MS", Georgia, Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers_detail td, #customers_detail th {
+  border: 1px solid #ddd;
+  padding: 1px;
+  text-align: left;
+  vertical-align: top;
+}
+
+#customers_detail tr:nth-child(even) {background-color: #f2f2ff;}
+
+#customers_detail tr:hover {background-color: #ddd;}
+
+#customers_detail th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4C50AF;
+  color: white;
+} 
+
+</style>
+</head>
+<body>
+
+
+
+<div class="container">
+	<div class="jumbotron text-left">
+		<h1 style="color:tomato;"><strong>東海企管系輔導學生取得證照統計</strong></h1>
+	  	<p>東海企管系老師們鼓勵學生在上完專業課程後，也向外部單位取得相關證照。除了「英文能力檢定」外，專業證照包含「企業系統」、「數位行銷與雲端科技」、「財務」等三類別。特別是，取得這些證照代表著學生：1. 精通企業實務運作方式； 2. 擁有專業企業系統（如鼎新及SAP）操作能力； 3. 數位時代下行銷策略擬定或數位行銷工具的應用能力； 以及 4.金融財務投資相關的能力。</p> 
+	</div>
+</div>
+ 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+		<h3 style="text-align: center;">目前各類證照通過人數統計</h3>
+		<p></p>
+		<table id="customers">
+			<tr><th colspan="4">企業系統類</th><th colspan="4">數位行銷與雲端科技類</th></tr>
+			<tr><th>ERP規劃師</th><th>ERP應用師<br>(配銷模組)</th><th>ERP應用師<br>(財務模組)</th><th>BI應用師</th><th>Google<br>數位學程</th><th>Google Ads</th><th>Google <br>Analytics</th><th>AWS Certified <br>Cloud Practitioner</th></tr>
+			<tr style="font-size: 48pt;"><td style="color: tomato; text-align: center;">560</td><td style="color: tomato; text-align: center;">209</td><td style="color: tomato; text-align: center;">248</td><td style="color: tomato; text-align: center;">4</td><td style="color: green; text-align: center;">250</td><td style="color: green; text-align: center;">31</td><td style="color: green; text-align: center;">31</td><td style="color: green; text-align: center;">3</td></tr>
+		</table>
+		<p></p>
+	</div>
+  </div>
+</div>
+<p></p>
+<h3 style="text-align: center;">近期「企業系統類」檢定的通過率</h3>
+<div class="container">
+  <div class="row">
+	 <div class="col-sm-4">
+		<p style="text-align: center;">ERP規劃師 (1101學期)</p>
+		<!-- <iframe src="https://plotdb.io/v/chart/24288" width="100%" height="300px" allowfullscreen="true" frameborder="0"></iframe> -->
+	  	<svg id="fillgauge1" width="97%" height="250"></svg>
+		<script language="JavaScript">
+			var gauge1 = loadLiquidFillGauge("fillgauge1", 90.9);
+			var config1 = liquidFillGaugeDefaultSettings();
+			config1.circleColor = "#17CA8B";
+			config1.textColor = "#048156";
+			config1.waveTextColor = "#A4f8DB";
+			config1.waveColor = "#17CA8B";
+		</script>
+		<p></p>
+	</div>
+
+	<div class="col-sm-4">
+	  <!-- <h3 style="text-align: center;">大專生研究計畫件數統計─依研究領域</h3> -->
+	  <p style="text-align: center;">ERP應用師配銷模組(1092學期)</p>
+	  <svg id="fillgauge3" width="97%" height="250"></svg>
+	  <script language="JavaScript">
+			var gauge2 = loadLiquidFillGauge("fillgauge3", 100, config1);
+			var config2 = liquidFillGaugeDefaultSettings();
+			config2.circleColor = "#CA178B";
+			config2.textColor = "#810456";
+			config2.waveTextColor = "#f8A4DB";
+			config2.waveColor = "#CA178B";
+	  </script>
+	  <p></p>
+    </div>	
+
+	<div class="col-sm-4">
+		<!-- <h3 style="text-align: center;">大專生研究計畫件數統計─依研究領域</h3> -->
+		<p style="text-align: center;">ERP應用師財務模組(1082學期)</p>
+		<svg id="fillgauge5" width="97%" height="250"></svg>
+		<script language="JavaScript">
+			var gauge3 = loadLiquidFillGauge("fillgauge5", 85.4, config2);
+			var config3 = liquidFillGaugeDefaultSettings();
+		</script>
+		<p></p>
+    </div>
+
+  </div>
+</div>
+
+<!-- <div class="container">
+  <div class="row">
+	
+	<div class="col-sm-4">
+		<p style="text-align: center;">ERP規劃師(1091學期)</p>
+		<svg id="fillgauge2" width="97%" height="250"></svg>
+		<script language="JavaScript">
+			var gauge4 = loadLiquidFillGauge("fillgauge2", 95.2);
+			var config4 = liquidFillGaugeDefaultSettings();
+		</script>
+		<p></p>
+    </div>
+
+	<div class="col-sm-4">
+		<p style="text-align: center;">ERP應用師配銷模組(1072學期)</p>
+		
+	  	<svg id="fillgauge4" width="97%" height="250"></svg>
+		<script language="JavaScript">
+			var gauge5 = loadLiquidFillGauge("fillgauge4", 96.6, config1);
+			var config5 = liquidFillGaugeDefaultSettings();
+		</script>
+		<p></p>
+	</div>
+
+	<div class="col-sm-4">
+		<p style="text-align: center;">ERP應用師財務模組(1062學期)</p>
+		<svg id="fillgauge6" width="97%" height="250"></svg>
+		<script language="JavaScript">
+			var gauge6 = loadLiquidFillGauge("fillgauge6", 93.3, config2);
+			var config6 = liquidFillGaugeDefaultSettings();
+		</script>
+		<p></p>
+    </div>
+  </div>
+</div>-->
+<p></p> 
+<h3 align="center">各學年度證照取得人數之分佈圖</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+		<h4 align="center">企業系統類證照</h4>
+		<p style="text-align: center;">搭配課程：企業資源規劃、企業資源規劃系統實務、認識人工智慧：從人工智慧到商業智慧<br>搭配系統：SAP ERP, 鼎新 Workflow ERP GP, Power BI, 鼎新 BI</p>
+		<iframe src="https://plotdb.io/v/chart/24778" width="100%" height="400px" allowfullscreen="true" frameborder="0"></iframe>
+		<p></p>
+    	<h4 align="center">數位行銷與雲端科技類證照</h4>
+		<p style="text-align: center;">搭配課程：數位行銷、數位行銷實務、AWS雲端服務認證與證照<br>搭配系統：Google, Facebook, Line, SAS, AWS Cloud,...</p>
+		<iframe src="https://plotdb.io/v/chart/24780" width="100%" height="400px" allowfullscreen="true" frameborder="0"></iframe>
+		<p></p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>各學年取得證照學生之明細表</h3>
+      <table id="customers_detail">
+		<tr><th style="width: 40px;">學年</th><th style="width: 190px;">證照類別</th><th style="width: 40px;">人數</th><th>學生</th></tr>
+
+		<tr><td>110</td><td>ERP規劃師</td><td style="text-align: center;">40</td><td>黃○庭、莊○璇、周○妤、張○笛、劉○汝、楊○蓁、李○甄、李○修、郭○靜、陳○慈、莊○慈、江○誼、李○恩、林○逸、黃○㴫、蔣○珈、鄧○心、陳○曄、羅○華、李○蓓、王○雯、舒○淳、何○涵、洪○鵑、蔡○嫙、林○至、蔡○欣、張○妤、洪○慈、陳○依、陳○邑、蕭○尹、王○逸、林○程、郭○豪、楊○婷、蕭○傑、郭○欣、林○岑、李○維 <img src="./img/new1.gif" alt="new"></td></tr>
+		<tr><td>109</td><td>Google Analytics</td><td style="text-align: center;">11</td><td>鄧○心、林○臻、郭○欣、李○毅、潘○婷、郭○琪、葉○芳、林○逸、劉○汝、陳○銘、林○君</td></tr>
+		<tr><td>109</td><td>Google Ads</td><td style="text-align: center;">5</td><td>黃○娟(GSN)、陳○曄(GDN)、郭○欣(APP)、洪○慈(GSN)、劉○汝(APP)<br>註：GSN 搜尋廣告／GDN 多媒體廣告／APP 應用程式廣告</td></tr>
+		<tr><td>109</td><td>Google 數位學程</td><td style="text-align: center;">75</td><td>劉○臻、郭○靜、王○晴、鄧○心、翁○澤、許○絜、陳○邑、陳○維、吳○玟、謝○龍、鄭○蓉、王○涵、吳○函、林○臻、黃○娟、李○瑋、黃○劼、陳○曄、謝○婷、郭○欣、朱○儀、李○毅、陳○慈、潘○婷、張○笛、洪○慈、吳○瑩、陳○如、郭○琪、張○瑞、謝○婧、宋○錡、李○洋、葉○芳、鄧○澤、曾○慈、羅○華、楊○蓁、李○蓓、何○程、黃○晴、許○瑜、林○逸、劉○汝、鄭○妤、李○綸、王○逸、鄭○禾、林○宣、施○喬、楊○薇、巴○良、又○斗、當○菜、鄧○玲、袁○愷、黃○謙、卓○璇、高○徵、馬○雅、羅○宜、林○雅、鄭○喬、吳○翰、胡○欣、羅○華、陳○銘、王○程、吳○蓉、蔡○諺、朱○權、林○君、李○翰、張○元、吳○霖</td></tr>
+		<tr><td>109</td><td>ERP軟體應用師_鼎新配銷</td><td style="text-align: center;">12</td><td>鍾○璇、歐○鈞、張○慈、陳○曄、黃○善、林○弼、侯○妤、廖○茹、洪○慈、翁○澤、王○雯、羅○蓁</td></tr>
+		<tr><td>109</td><td>BI軟體應用師</td><td style="text-align: center;">4</td><td>盧○均、黃○紓、蔡○欣、陳○依</td></tr>
+		<tr><td>109</td><td>ERP規劃師</td><td style="text-align: center;">40</td><td>吳○瑩、歐○鈞、張○安、葉○嫚、謝○萱、鍾○璇、張○嘉、李○霖、張○婷、常○瑜、畢○元、蔡○涵、王○妮、謝○潔、顏○喆、張○敏、陳○儀、賴○蓉、林○萱、賴○渝、李○蒨、詹○瑩、高○咸、陳○均、張○恩、陳○元、陳○瑜、張○信、黃○慈、吳○榮、張○復、陳○倫、許○翊、黃○潔、程○惠、張○睿、林○翰、洪○宸、楊○穎、葉○帆</td></tr>
+		<tr><td>108</td><td>AWS Certified Cloud Practitioner</td><td style="text-align: center;">3</td><td>羅○評、洪○鈞、張○慈</td></tr>
+		<tr><td>108</td><td>Google Analytics</td><td style="text-align: center;">10</td><td>林○萱、李○萱、林○翔、王○熒、施○安、楊○瑄、王○嬿、內○子、林○智、陳○瑜</td></tr>
+		<tr><td>108</td><td>Google Ads</td><td style="text-align: center;">11</td><td>王○熒(GSN)、施○安(GSN)、王○熒(GDN)、施○安(GDN)、王○熒(VID)、施○安(VID)、王○熒(SHO)、施○安(SHO)、王○熒(APP)、施○安(APP)、王○熒(MEA) <br>註：GSN 搜尋廣告／GDN 多媒體廣告／VID 影音廣告／SHO 購物廣告／APP 應用程式廣告／MEA 評估廣告</td></tr>
+		<tr><td>108</td><td>Google 數位學程</td><td style="text-align: center;">58</td><td>洪○恆、莊○衞、吳○豪、林○萱、李○臻、張○齊、林○諭、賴○渝、胡○函、楊○翊、吳○賢、黃○慈、李○萱、蔡○涵、林○翔、石○岱、張○月、吳○澤、陳○銓、鄭○怡、陳○穎、江○涵、陳○均、許○吉、王○熒、施○安、楊○瑄、王○嬿、莊○雯、李○慧、賴○蓉、常○瑜、葉○嫚、邱○嘉、楊○燁、林○辰、陳○茹、郭○誠、張○萱、鄭○伶、黃○文、尹○詠、施○晴、陳○豪、鄭○譯、曾○升、劉○基、鄭○瑩、劉○昀、內○子、近○岬、賴○然、林○智、陳○瑜、許○翊、尤○傑、林○如、蔡○嬿</td></tr>
+		<tr><td>108</td><td>ERP軟體應用師_鼎新財務</td><td style="text-align: center;">41</td><td>張○安、李○萱、施○晴、黃○璇、張○萱、王○熒、畢○元、陳○茹、李○臻、謝○萱、張○瑋、王○嬿、石○岱、高○咸、陳○吟、黃○翔、黃○文、葉○婷、江○涵、張○婷、陳○均、林○彤、宋○騰、王○幼、吳○葦、林○諭、鄭○程、盧○如、施○屏、李○欣、沈○竹、林○傑、吳○憲、陳○憶、李○麒、張○月、鄭○馨、黃○銪、林○如、陳○慈、黃○安</td></tr>
+		<tr><td>108</td><td>ERP規劃師</td><td style="text-align: center;">48</td><td>黃○盈、林○如、邱○蓉、黃○萱、黃○銪、陳○豪、許○吉、林○傑、鄭○馨、吳○澤、張○萱、蔡○靜、林○仁、鄭○儀、蔡○蓁、卓○志、王○絨、李○萱、張○瑋、莊○雯、楊○雲、洪○翰、洪○瑋、蔡○婷、黃○豪、洪○絜、卓○亘、黃○文、施○瑜、蔡○嬿、賴○蓁、許○榕、陳○羽、廖○羚、蔡○婷、楊○燁、陳○銓、邱○嘉、近○岬、林○芸、杜○璇、陳○婷、蘇○龍、王○欣、曾○茹、許○予、李○臻、賴○然</td></tr>
+		<tr><td>107</td><td>Google Analytics</td><td style="text-align: center;">9</td><td>張○柔、簡○晞、陳○璉、陳○雯、黃○恆、賴○秀、林○萱、陳○琦、王○翰</td></tr>
+		<tr><td>107</td><td>Google Ads</td><td style="text-align: center;">10</td><td>張○柔(GSN)、郭○弘(GSN)、鍾○溥(GSN)、陳○雯(SHO)、陳○琦(GSN)、江○君(GSN)、吳○庭(GSN)、林○廷(GSN)、蔡○璇(GSN)、王○翰(GDN) <br>註：GSN 搜尋廣告／GDN 多媒體廣告／SHO 購物廣告</td></tr>
+		<tr><td>107</td><td>Google 數位學程</td><td style="text-align: center;">117</td><td>黃○雅、張○涵、林○仁、張○柔、陳○雯、黃○棻、李○珉、楊○潔、葉○慈、趙○翔、林○靜、張○茵、陳○憶、邱○綺、沈○真、方○琴、郭○弘、顏○芳、陳○臨、謝○璇、吳○葦、吳○樺、董○銘、陳○升、陳○愷、陳○蓁、杜○璇、陳○怡、陳○穎、林○萱、賴○蓁、沈○儀、邱○婕、林○君、曾○祥、江○渝、林○琳、賴○潔、胡○寅、陳○竹、許○維、陳○儒、梁○彰、陳○軒、吳○寧、朱○瑩、陳○文、陳○森、張○湄、林○瑩、林○演、吳○萱、曾○淨、莊○雯、巫○軒、鄭○怡、黃○婷、陳○志、簡○晞、張○淳、吳○儀、陳○璉、林○安、黃○勳、楊○璿、巫○可、王○丞、鍾○溥、蔡○玄、陳○佑、連○丞、吳○慶、李○霈、蔡○璇、蔡○翔、蔡○彣、陳○婷、吳○賢、韓○佑、陳○雯、黃○恆、林○廷、陳○生、陳○綸、許○菥、杜○宇、曾○宇、謝○辰、葉○青、游○儒、賴○秀、陳○維、顧○軒、鄭○辰、曾○凱、徐○成、林○芳、林○萱、江○霖、林○楺、賴○菁、陳○琦、周○謙、江○君、江○宇、張○瑜、邱○浩、黃○澤、吳○庭、毛○慧、黃○錇、陳○玲、林○昊、林○岑、嚴○文、王○翰、王○軒</td></tr>
+		<tr><td>107</td><td>ERP軟體應用師_鼎新配銷</td><td style="text-align: center;">56</td><td>施○瑜、蔡○婷、眭○捷、黃○萱、林○芸、曹○維、張○柔、徐○婷、陳○豪、郭○弘、賴○錚、卓○志、賴○蓁、許○嘉、宋○輿、吳○寧、林○萱、翁○為、郭○均、江○渝、邱○婕、陳○璇、陳○穎、張○湄、黃○棻、廖○羚、何○霖、陳○臨、邱○欣、詹○凌、王○筑、林○瑩、周○儀、陳○文、許○聰、林○靜、徐○馨、陳○帆、陳○綺、吳○霏、李○庭、林○涵、紀○欣、王○愉、柯○議、張○雯、朱○瑩、吳○欣、賈○婷、李○錡、郭○瑄、陳○心、曾○淨、郭○琳、楊○彣、陳○軒</td></tr>
+		<tr><td>107</td><td>ERP規劃師</td><td style="text-align: center;">49</td><td>徐○婷、鄧○淳、周○俞、林○苓、鄭○珊、郭○弘、吳○瑄、陳○安、蔣○妤、陳○柔、蔡○慈、陳○怡、謝○澔、林○靜、歐○伶、王○愉、胡○寅、陳○彣、詹○凌、陳○羚、曾○淨、廖○吟、郭○伶、李○蔓、李○瑄、吳○璇、邵○庭、林○辰、蔡○相、汪○翔、陳○霖、陳○軒、黃○凌、林○涵、許○喬、黃○祐、陳○嘉、陳○儒、楊○潔、張○瀚、張○慈、王○媗、盧○昀、葉○瑩、陳○雯、林○雅、曾○右、謝○家、徐○恆</td></tr>
+		<tr><td>106</td><td>Google Analytics</td><td style="text-align: center;">1</td><td>蔡○妤</td></tr>
+		<tr><td>106</td><td>Google Ads</td><td style="text-align: center;">5</td><td>陳○柔(GSN)、徐○婷(VID)、吳○唐(MOB)、黃○婕(GSN)、楊○慈(GSN) <br>註：GSN 搜尋廣告／MOB 行動廣告／VID 影音廣告</td></tr>
+		<tr><td>106</td><td>ERP軟體應用師_鼎新財務</td><td style="text-align: center;">56</td><td>蔡○毓、羅○君、謝○庭、鄭○瑋、賴○婷、游○茹、郭○伶、郭○妏、張○滋、張○萱、吳○婷、洪○瑜、梁○堂、廖○婷、賴○穎、張○蓁、黃○琳、謝○澔、林○恩、邱○貽、曾○綺、鄭○廷、陳○均、賴○君、楊○慈、黃○庭、汪○翔、葉○秀、姚○妘、張○惠、吳○銓、鄭○凡、徐○雅、陳○諠、鄭○仁、林○君、劉○伶、林○萱、黃○茜、簡○娟、廖○霖、許○涵、李○瑤、蔡○凡、林○汝、姚○雅、陳○文、林○毅、許○銘、阮○喬、鄭○哲、廖○帆、邱○慧、楊○潁、藍○妤、郭○勳</td></tr>
+		<tr><td>106</td><td>ERP規劃師</td><td style="text-align: center;">52</td><td>賴○婷、林○萱、徐○雅、陳○寧、郭○宜、李○靜、林○毅、曾○綺、黃○庭、蔡○蓁、林○潔、劉○伶、蕭○尹、謝○修、姚○雅、劉○彣、簡○庭、張○婷、許○齊、陳○希、鄭○慈、陳○萱、吳○維、柯○至、梁○瑄、陳○伶、邱○貽、林○君、蔡○儒、陳○欣、張○媺、張○萱、陳○嫻、周○彣、林○吟、邵○浩、王○圖、王○源、林○慧、王○康、許○涵、王○森、黃○瑋、陳○穎、賴○君、姬○安、林○蓁、廖○帆、許○慈、邱○鈞、陳○廷、李○廷</td></tr>
+		<tr><td>105</td><td>ERP軟體應用師_鼎新配銷</td><td style="text-align: center;">53</td><td>郭○珊、林○辰、周○君、顏○珊、黃○涵、蘇○婷、游○任、翁○琪、梁○庭、沈○儀、陳○容、曾○綺、郭○廷、李○平、邵○祈、林○卿、劉○萱、左○羽、謝○婷、楊○恩、劉○葶、何○儀、李○慈、梁○瑄、周○萱、温○嬿、劉○杰、鄭○怡、蔡○芳、柯○瑄、陳○萱、王○圖、林○潔、劉○震、鄧○泰、林○境、呂○怡、陳○恩、黃○璇、江○瑜、許○齊、李○然、蔡○丞、陳○妍、吳○唐、丘○浚、吳○璇、王○翔、周○福、尤○敏、王○慈、王○榛、李○萱</td></tr>
+		<tr><td>105</td><td>ERP規劃師</td><td style="text-align: center;">54</td><td>鍾○宣、陳○蓉、杜○瑄、游○任、成○芷、顏○珊、黃○萍、林○學、柳○昕、蔡○豪、楊○泓、廖○宸、林○羽、許○馨、蔡○均、陳○涵、黃○涵、王○翔、蔡○如、林○昱、葉○豪、黃○嫙、江○瑜、許○燕、王○云、李○罡、陳○容、謝○敏、王○涓、黃○珊、李○㛓、歐○廷、吳○昀、左○羽、歐○○亭、李○然、李○涵、陳○浩、蘇○佑、羅○欣、許○綺、楊○薇、劉○杰、游○婷、林○境、羅○賢、洪○琳、郭○晴、蔡○丞、金○羲、吳○緯、李○萱、汪○如、劉○廷</td></tr>
+		<tr><td>104</td><td>ERP軟體應用師_鼎新財務</td><td style="text-align: center;">61</td><td>陳○涵、林○偉、袁○修、鄭○穎、趙○超、羅○賢、簡○萱、施○君、許○婷、蔡○音、劉○俞、汪○如、林○彤、黃○涵、楊○琪、陳○寧、謝○敏、黃○甯、陳○文、吳○霙、沈○庭、王○云、蔡○達、劉○誠、范○威、張○筑、顏○儀、張○尹、蘇○佑、戴○慧、蔡○如、孫○銓、黃○瑩、梁○婷、宋○潔、林○儒、洪○萌、邱○航、秦○橞、楊○茜、王○涓、王○豪、黃○嫺、常○瑋、林○珍、黃○嫙、周○蓁、邱○潔、林○穎、游○婷、鄭○琪、黃○寧、歐○雅、黃○萍、陳○蓉、許○琳、李○慈、柳○昕、徐○靖、張○斌、江○綺</td></tr>
+		<tr><td>104</td><td>ERP規劃師</td><td style="text-align: center;">56</td><td>范○威、孫○銓、薛○涵、蔡○鈴、張○斌、簡○萱、洪○遙、凌○昀、林○惠、周○如、吳○融、王○詞、陳○璇、林○宇、楊○妃、黃○昂、許○珊、何○蓉、嚴○瑭、陳○萱、林○珍、郭○雯、吳○儀、施○君、林○儒、蔡○音、陳○強、王○聲、黃○賢、張○尹、楊○茜、袁○芳、黎○維、林○偉、黃○嫺、常○瑋、林○勤、陳○璇、陳○妙、邱○航、楊○琪、謝○霖、林○吟、陳○彤、吳○霙、葉○豪、吳○瑩、賴○安、黃○綺、黃○晟、曹○淳、葉○欣、鄭○穎、李○運、張○萱、吳○樺</td></tr>
+		<tr><td>103</td><td>ERP軟體應用師_鼎新配銷</td><td style="text-align: center;">23</td><td>吳○澔、陳○勳、陳○東、張○玲、林○穎、姜○星、林○雅、黃○寧、陳○萍、江○晟、黃○程、李○竹、林○昕、胡○皓、陳○萱、陳○柔、范○濃、許○維、王○瑩、黃○昂、葉○麟、吳○儀、曾○渝</td></tr>
+		<tr><td>103</td><td>ERP規劃師</td><td style="text-align: center;">63</td><td>吳○心、黃○嘉、李○宏、莊○娟、劉○壬、羅○哲、陳○涵、許○均、羅○妤、吳○婷、馬○涵、馮○晴、蘇○浩、葉○豪、劉○瑜、邱○榕、許○玲、吳○甄、范○濃、賴○承、高○雅、胡○皓、林○立、李○翰、王○晴、秦○豪、陳○璇、林○芳、謝○均、劉○希、董○罡、張○進、吳○樺、白○雯、洪○佑、汪○源、吳○澔、楊○婷、魏○芳、楊○閔、周○璿、李○其、謝○郡、陳○萱、洪○秀、陳○蓉、許○勻、林○昕、張○君、許○維、吳○儀、王○璽、邱○貽、周○蓁、李○竹、陳○琪、蔡○逸、王○棋、鍾○哲、陳○瑩、左○丞、劉○與、陳○淳</td></tr>
+		<tr><td>102</td><td>ERP軟體應用師_鼎新財務</td><td style="text-align: center;">32</td><td>林○誼、莊○娟、吳○婷、趙○樺、蘇○安、林○妤、謝○竹、吳○芸、高○雅、黃○婷、董○罡、王○騏、楊○綺、蘇○諺、高○香、李○純、楊○閔、林○君、李○宇、白○雯、張○嘉、陳○慈、楊○婷、何○芸、陳○揚、蕭○庭、鄭○睿、曾○渝、黃○儀、洪○容、高○瑜、蔡○雯</td></tr>
+		<tr><td>102</td><td>ERP規劃師</td><td style="text-align: center;">34</td><td>劉○瑜、高○香、唐○甯、吳○芸、黃○儀、鄭○月、詹○皓、陳○萱、陳○峰、童○霆、廖○翰、巫○蓉、劉○勛、蕭○庭、王○瑋、李○菱、費○珊、鄭○琪、李○純、洪○容、林○鴻、黃○雯、陳○陵、謝○庭、黃○淳、陳○潔、何○芸、莊○琪、陳○瑩、張○欣、楊○綺、黃○珊、楊○敏、曾○渝</td></tr>
+		<tr><td>101</td><td>ERP軟體應用師_鼎新配銷</td><td style="text-align: center;">12</td><td>陳○嵐、黃○德、林○瑜、李○菱、楊○縉、李○旗、賴○舒、吳○芸、林○逸、簡○倫、陳○丞、黃○仁</td></tr>
+		<tr><td>101</td><td>ERP規劃師</td><td style="text-align: center;">22</td><td>林○穎、陳○安、陳○芬、黃○諭、黃○婷、吳○嫻、蔡○菁、林○蓁、蕭○華、洪○岳、郭○志、蔡○真、沈○穎、傅○欣、林○莘、陳○志、張○宗、黃○芳、陳○琪、李○旗、陳○慈、廖○玲</td></tr>
+		<tr><td>100</td><td>ERP軟體應用師_鼎新財務</td><td style="text-align: center;">18</td><td>林○緯、陳○辰、利○蓁、吳○翰、何○芸、顏○毅、林○眉、羅○元、林○祥、李○旗、張○宗、李○慈、吳○維、林○宸、林○甄、劉○均、蔡○元、簡○琪</td></tr>
+		<tr><td>100</td><td>ERP規劃師</td><td style="text-align: center;">16</td><td>李○翰、林○緯、蔡○倫、陳○君、吳○育、陳○融、張○容、王○琳、林○筠、洪○靜、王○雅、林○祥、蔡○元、常○婷、李○怡、劉○均</td></tr>
+		<tr><td>99</td><td>ERP軟體應用師_鼎新配銷</td><td style="text-align: center;">26</td><td>何○萱、王○琳、溫○右、陳○柔、李○文、譚○翰、楊○涵、侯○佑、賴○丞、戴○伶、吳○宜、徐○九、徐○鴻、王○文、陳○宜、陳○紋、朱○萱、林○哲、張○富、周○昀、林○邑、邱○芳、林○巍、黃○純、周○槿、葉○甄</td></tr>
+		<tr><td>99</td><td>ERP規劃師</td><td style="text-align: center;">33</td><td>周○璇、蔡○婷、施○峰、徐○潤、張○竣、李○珊、李○旻、李○鵬、劉○蓬、蘇○生、徐○娟、陳○亭、鍾○之、曾○翔、王○煌、陳○舟、徐○鴻、蔡○辰、施○耀、蔡○文、張○富、朱○萱、林○濬、黃○怡、邱○倫、楊○涵、宋○涵、王○耀、鄭○穎、周○昀、徐○淳、鍾○楷、李○慧</td></tr>
+		<tr><td>98</td><td>ERP軟體應用師_鼎新財務</td><td style="text-align: center;">40</td><td>施○耀、陸○宇、詹○如、楊○哲、陳○涵、張○婷、陳○薇、洪○秀、高○怡、楊○綸、張○雲、吳○儀、詹○珊、林○薇、柯○姍、莊○容、王○婷、張○富、毛○茹、程○介、周○綺、王○耀、王○煌、李○欣、洪○軒、梁○容、陳○君、陳○涵、黃○婕、張○盈、黃○瑜、吳○華、羅○敏、鄭○元、李○柔、卓○均、方○涵、賴○萱、曾○玲、林○儀</td></tr>
+		<tr><td>98</td><td>ERP規劃師</td><td style="text-align: center;">21</td><td>詹○珊、方○涵、黃○琳、凃○馨、顏○廷、郭○婷、詹○如、王○臻、林○達、黃○婷、毛○茹、張○盈、梁○容、洪○翔、陳○靜、林○儀、黃○婕、黃○卿、陳○涵、卓○均、羅○敏</td></tr>
+		<tr><td>97</td><td>ERP軟體應用師_鼎新配銷</td><td style="text-align: center;">27</td><td>黃○芳、吳○芷、周○莉、高○晴、徐○瑜、林○利、吳○蓉、李○綾、江○榮、洪○翔、黃○昕、張○萱、張○倫、高○珊、陳○琪、李○樺、游○雯、楊○晶、詹○如、陳○愉、施○妤、何○蘭、袁○萍、吳○萍、周○玄、陳○蒨、洪○揚</td></tr>
+		<tr><td>97</td><td>ERP規劃師</td><td style="text-align: center;">15</td><td>李○晴、黃○涵、何○潔、蔡○臻、賴○瑄、游○雯、高○晴、張○安、江○穎、韓○婷、楊○晶、周○玄、莊○婷、曾○婷、張○瑄</td></tr>
+		<tr><td>96</td><td>ERP規劃師</td><td style="text-align: center;">17</td><td>夏○凱、杜○芳、張○蓉、湯○婷、簡○文、張○晴、杜○瑜、蔡○吟、施○妤、蔡○蓉、陳○愉、黃○芹、李○萱、許○綺、蔡○雅、郭○汝、詹○婷</td></tr>
+
+
+
+
+
+
+
+
+	  </table>
+	  <p></p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+	<div class="jumbotron text-left">
+		<div class="row">
+			<div class="col-sm-8">
+				<h4 style="color:black;"><strong>東海大學企業管理學系課程相關連結</strong></h4>
+				<p>
+				<a href="https://www.cerps.org.tw/zh-TW/category/2020-09-04%2016:09:46" target="_blank">ERP認證｜中華企業資源規劃學會(ERP學會)</a><br>
+				<a href="https://www.cerps.org.tw/zh-TW/category/2020-09-04%2016:10:26" target="_blank">BI認證｜中華企業資源規劃學會(ERP學會)</a><br>
+				<a href="https://skillshop.withgoogle.com/intl/zh-TW_ALL/" target="_blank">好學堂(skill shop)｜google認證區 </a><br>
+				<a href="https://learndigital.withgoogle.com/digitalgarage-tw/?gclid=CjwKCAjwve2TBhByEiwAaktM1PrdcSh3g8FyeAjFmpOjt8cBES0o3mS5ugcI-lhnWDiReA9uv8OtehoCePoQAvD_BwE&gclsrc=aw.ds" target="_blank">好學堂(skill shop)｜google認證區</a><br>
+				<a href="https://aws.amazon.com/tw/certification/certified-solutions-architect-associate/" target="_blank">AWS Certified Solutions Architect｜AWS認證區</a><br>
+				<a href="https://aws.amazon.com/tw/certification/certified-cloud-practitioner/" target="_blank">AWS Certified Cloud Practitioner Certification｜AWS認證區</a><br>
+				</p>
+			</div>
+			<div class="col-sm-4">
+			<!-- <div class="jumbotron text-left"> -->
+				<h4 style="color:black;"><strong>東海企管相關連結</strong></h4>
+				<p><a href="http://ba.thu.edu.tw/" target="_blank">東海大學企業管理學系官網</a><br>
+				<a href="https://www.facebook.com/thuba1973/" target="_blank">東海大學企業管理學系官方Facebook</a><br>				
+				<a href="http://bapage2.thu.edu.tw/exchange.html" target="_blank">歷屆長期國際交換資訊｜東海企管</a><br>
+				<a href="http://bapage2.thu.edu.tw/bainteraction.html" target="_blank">歷屆短期國際交流資訊｜東海企管</a><br>
+				<a href="http://bapage2.thu.edu.tw/bajointdegree.html" target="_blank">國際雙聯學位資訊｜東海企管</a><br>
+				<a href="http://bapage2.thu.edu.tw/baintern.html" target="_blank">歷屆實習資訊｜東海企管</a><br>
+				<a href="http://bapage2.thu.edu.tw/jointbamba.html" target="_blank">歷屆五年一貫相關資訊｜東海企管</a><br>
+				<a href="http://bapage2.thu.edu.tw/baprojects.html" target="_blank">歷屆大專生計畫資訊｜東海企管</a><br>
+				<a href="http://bapage2.thu.edu.tw/bacourse.html" target="_blank">修課資訊｜東海企管</a><br>
+				<!-- <a href="http://bapage2.thu.edu.tw/jointbamba.html" target="_blank">五年一貫相關資訊｜東海企管</a><br> -->
+				</p>
+			</div>
+		<!-- </div> -->
+	</div>
+</div>
+</div> 
+
+<!-- 回到頂端按鈕 start -->
+<script>
+//<![CDATA[
+(function () {
+$("body").append("<img id='goTopButton' style='display: none; z-index: 5; cursor: pointer;' title='回到頂端'/>");
+var img = "img/top.png",
+locatioin = 2/3, // 按鈕出現在螢幕的高度
+right = 10, // 距離右邊 px 值
+opacity = 0.8, // 透明度
+speed = 500, // 捲動速度
+$button = $("#goTopButton"),
+$body = $(document),
+$win = $(window);
+$button.attr("src", img);
+$button.on({
+mouseover: function() {$button.css("opacity", 1);},
+mouseout: function() {$button.css("opacity", opacity);},
+click: function() {$("html, body").animate({scrollTop: 0}, speed);}
+});
+window.goTopMove = function () {
+var scrollH = $body.scrollTop(),
+winH = $win.height(),
+css = {"top": winH * locatioin + "px", "position": "fixed", "right": right, "opacity": opacity};
+if(scrollH > 20) {
+$button.css(css);
+$button.fadeIn("slow");
+} else {
+$button.fadeOut("slow");
+}
+};
+$win.on({
+scroll: function() {goTopMove();},
+resize: function() {goTopMove();}
+});
+} )();
+//]]>
+</script>
+<!-- 回到頂端按鈕 end, Design by WFU BLOG -->
+
+
+</body>
+</html>
